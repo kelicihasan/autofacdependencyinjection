@@ -18,6 +18,7 @@ namespace BRC.Derya.WebUI
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<IletisimManager>().As<IIletisimService>();
+            builder.RegisterType<EfIletisimDal>().As<IIletisimDal>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
