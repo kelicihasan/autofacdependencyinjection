@@ -17,6 +17,7 @@ namespace BRC.Derya.WebUI
         protected void Application_Start()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<IletisimManager>().As<IIletisimService>();
             builder.RegisterType<EfIletisimDal>().As<IIletisimDal>();
 
